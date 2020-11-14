@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -18,7 +19,9 @@ use GrizzIt\Enum\Enum;
  * @method static ComparatorEnum IN()
  * @method static ComparatorEnum NIN()
  * @method static ComparatorEnum LIKE()
- * @method static ComparatorEnum NOT()
+ * @method static ComparatorEnum NOT_LIKE()
+ * @method static ComparatorEnum IS_NULL()
+ * @method static ComparatorEnum NOT_NULL()
  */
 class ComparatorEnum extends Enum
 {
@@ -28,7 +31,7 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const EQ = 'eq';
+    public const EQ = 'eq';
 
     /**
      * Not equals comparator "!=".
@@ -36,7 +39,7 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const NEQ = 'neq';
+    public const NEQ = 'neq';
 
     /**
      * Greater than comparator ">".
@@ -44,7 +47,7 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const GT = 'gt';
+    public const GT = 'gt';
 
     /**
      * Greater than or equals comparator ">=".
@@ -52,7 +55,7 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const GTEQ = 'gteq';
+    public const GTEQ = 'gteq';
 
     /**
      * Less than comparator "<".
@@ -60,7 +63,7 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const LT = 'lt';
+    public const LT = 'lt';
 
     /**
      * Less than or equals comparator "<=".
@@ -68,7 +71,7 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const LTEQ = 'lteq';
+    public const LTEQ = 'lteq';
 
     /**
      * In comparator.
@@ -76,7 +79,7 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const IN = 'in';
+    public const IN = 'in';
 
     /**
      * Not in comparator.
@@ -84,7 +87,7 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const NIN = 'nin';
+    public const NIN = 'nin';
 
     /**
      * Like comparator.
@@ -92,14 +95,29 @@ class ComparatorEnum extends Enum
      *
      * @var string
      */
-    const LIKE = 'like';
+    public const LIKE = 'like';
 
     /**
-     * Not comparator.
-     * Checks if the field is not like the value.
-     * Can be used for example in a query for a NOT NULL statement.
+     * Not like comparator.
+     * Checks if the field does not look like the value.
      *
      * @var string
      */
-    const NOT = 'not';
+    public const NOT_LIKE = 'not_like';
+
+    /**
+     * Is null comparator.
+     * Checks if the field is null.
+     *
+     * @var string
+     */
+    public const IS_NULL = 'is_null';
+
+    /**
+     * Is not null comparator.
+     * Checks if the field is not null.
+     *
+     * @var string
+     */
+    public const NOT_NULL = 'not_null';
 }

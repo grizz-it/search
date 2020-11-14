@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -20,19 +21,19 @@ class OperatorEnum extends Enum
      *
      * @var string
      */
-    const AND = 'and';
+    public const AND = 'and';
 
     /**
      * Any check should return true when joined with this operator.
      *
      * @var string
      */
-    const OR = 'or';
+    public const OR = 'or';
 
     /**
      * One of the checks should return true when joined with this operator.
      *
      * @var string
      */
-    const XOR = 'xor';
+    public const XOR = 'xor';
 }
