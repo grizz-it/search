@@ -14,7 +14,7 @@ use GrizzIt\Search\Common\FilterGroupInterface;
 class FilterGroup implements FilterGroupInterface
 {
     /** @var FilterInterface[]|FilterGroupInterface[] */
-    private $filters;
+    private $filters = [];
 
     /** @var OperatorEnum */
     private $operator;
