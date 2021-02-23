@@ -16,5 +16,5 @@ interface SearchCriteriaCompilerInterface
      *
      * @return mixed
      */
-    public function compile(SearchCriteriaInterface $searchCriteria);
+    public function compile(SearchCriteriaInterface $searchCriteria): mixed;
 }

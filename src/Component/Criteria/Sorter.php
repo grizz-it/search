@@ -13,10 +13,10 @@ use GrizzIt\Search\Common\SorterInterface;
 class Sorter implements SorterInterface
 {
     /** @var DirectionEnum */
-    private $direction;
+    private DirectionEnum $direction;
 
     /** @var string */
-    private $field;
+    private string $field;
 
     /**
      * Constructor

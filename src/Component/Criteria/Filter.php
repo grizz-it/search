@@ -13,13 +13,13 @@ use GrizzIt\Search\Common\FilterInterface;
 class Filter implements FilterInterface
 {
     /** @var string */
-    private $field;
+    private string $field;
 
     /** @var ComparatorEnum */
-    private $comparator;
+    private ComparatorEnum $comparator;
 
     /** @var mixed */
-    private $value;
+    private mixed $value;
 
     /**
      * Constructor
@@ -31,7 +31,7 @@ class Filter implements FilterInterface
     public function __construct(
         string $field,
         ComparatorEnum $comparator,
-        $value
+        mixed $value
     ) {
         $this->field = $field;
         $this->comparator = $comparator;
@@ -63,7 +63,7 @@ class Filter implements FilterInterface
      *
      * @return mixed
      */
-    public function getValue()
+    public function getValue(): mixed
     {
         return $this->value;
     }

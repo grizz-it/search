@@ -14,10 +14,10 @@ use GrizzIt\Search\Common\FilterGroupInterface;
 class FilterGroup implements FilterGroupInterface
 {
     /** @var FilterInterface[]|FilterGroupInterface[] */
-    private $filters = [];
+    private array $filters = [];
 
     /** @var OperatorEnum */
-    private $operator;
+    private OperatorEnum $operator;
 
     /**
      * Constructor.

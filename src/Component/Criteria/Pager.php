@@ -12,10 +12,10 @@ use GrizzIt\Search\Common\PagerInterface;
 class Pager implements PagerInterface
 {
     /** @var int */
-    private $page;
+    private int $page;
 
     /** @var int */
-    private $amount;
+    private int $amount;
 
     /**
      * Constructor

@@ -16,16 +16,16 @@ use GrizzIt\Search\Common\SorterInterface;
 class SearchCriteria implements SearchCriteriaInterface
 {
     /** @var FilterGroupInterface[] */
-    private $filterGroups = [];
+    private array $filterGroups = [];
 
     /** @var LimiterInterface[] */
-    private $limiters = [];
+    private array $limiters = [];
 
     /** @var PagerInterface[] */
-    private $pagers = [];
+    private array $pagers = [];
 
     /** @var SorterInterface[] */
-    private $sorters = [];
+    private array $sorters = [];
 
     /**
      * Adds a filter group to the criteria.
