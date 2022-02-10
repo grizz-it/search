@@ -7,25 +7,28 @@
 
 namespace GrizzIt\Search\Common;
 
-use GrizzIt\Enum\Enum;
-
-/**
- * @method static DirectionEnum ASC()
- * @method static DirectionEnum DESC()
- */
-class DirectionEnum extends Enum
+enum DirectionEnum
 {
     /**
      * Directs the sorting in ascending order.
-     *
-     * @var string
      */
-    public const ASC = 'asc';
+    case ASC;
 
     /**
      * Directs the sorting in descending order.
-     *
-     * @var string
      */
-    public const DESC = 'desc';
+    case DESC;
+
+    /**
+     * Retrieves the direction name from the enum.
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return match($this) {
+            DirectionEnum::ASC => 'asc',
+            DirectionEnum::DESC => 'desc',
+        };
+    }
 }

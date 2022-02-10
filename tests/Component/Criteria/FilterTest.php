@@ -26,10 +26,11 @@ class FilterTest extends TestCase
      */
     public function testFilter(): void
     {
-        $subject = new Filter('foo', ComparatorEnum::EQ(), 'bar');
+        $subject = new Filter('foo', ComparatorEnum::EQ, 'bar');
         $this->assertInstanceOf(Filter::class, $subject);
         $this->assertEquals('foo', $subject->getField());
-        $this->assertEquals(ComparatorEnum::EQ(), $subject->getComparator());
+        $this->assertEquals(ComparatorEnum::EQ, $subject->getComparator());
+        $this->assertEquals(ComparatorEnum::EQ->name(), $subject->getComparator()->name());
         $this->assertEquals('bar', $subject->getValue());
     }
 }

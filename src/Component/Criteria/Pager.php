@@ -11,22 +11,14 @@ use GrizzIt\Search\Common\PagerInterface;
 
 class Pager implements PagerInterface
 {
-    /** @var int */
-    private int $page;
-
-    /** @var int */
-    private int $amount;
-
     /**
      * Constructor
      *
      * @param int $page
      * @param int $amount
      */
-    public function __construct(int $page, int $amount)
+    public function __construct(private int $page, private int $amount)
     {
-        $this->page = $page;
-        $this->amount = $amount;
     }
 
     /**

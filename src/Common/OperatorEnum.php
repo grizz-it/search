@@ -7,33 +7,34 @@
 
 namespace GrizzIt\Search\Common;
 
-use GrizzIt\Enum\Enum;
-
-/**
- * @method static OperatorEnum AND()
- * @method static OperatorEnum OR()
- * @method static OperatorEnum XOR()
- */
-class OperatorEnum extends Enum
+enum OperatorEnum
 {
     /**
      * All checks should return true when joined with this operator.
-     *
-     * @var string
      */
-    public const AND = 'and';
+    case AND;
 
     /**
      * Any check should return true when joined with this operator.
-     *
-     * @var string
      */
-    public const OR = 'or';
+    case OR;
 
     /**
      * One of the checks should return true when joined with this operator.
-     *
-     * @var string
      */
-    public const XOR = 'xor';
+    case XOR;
+
+    /**
+     * Retrieves the operator name from the enum.
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return match($this) {
+            OperatorEnum::AND => 'and',
+            OperatorEnum::OR => 'or',
+            OperatorEnum::XOR => 'xor',
+        };
+    }
 }

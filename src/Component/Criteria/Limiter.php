@@ -12,7 +12,7 @@ use GrizzIt\Search\Common\LimiterInterface;
 class Limiter implements LimiterInterface
 {
     /** @var array */
-    private array $fields = [];
+    private array $fields;
 
     /**
      * Constructor

@@ -12,15 +12,6 @@ use GrizzIt\Search\Common\FilterInterface;
 
 class Filter implements FilterInterface
 {
-    /** @var string */
-    private string $field;
-
-    /** @var ComparatorEnum */
-    private ComparatorEnum $comparator;
-
-    /** @var mixed */
-    private mixed $value;
-
     /**
      * Constructor
      *
@@ -29,13 +20,10 @@ class Filter implements FilterInterface
      * @param mixed  $value
      */
     public function __construct(
-        string $field,
-        ComparatorEnum $comparator,
-        mixed $value
+        private string $field,
+        private ComparatorEnum $comparator,
+        private mixed $value
     ) {
-        $this->field = $field;
-        $this->comparator = $comparator;
-        $this->value = $value;
     }
 
     /**

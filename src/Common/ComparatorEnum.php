@@ -7,117 +7,100 @@
 
 namespace GrizzIt\Search\Common;
 
-use GrizzIt\Enum\Enum;
-
-/**
- * @method static ComparatorEnum EQ()
- * @method static ComparatorEnum NEQ()
- * @method static ComparatorEnum GT()
- * @method static ComparatorEnum GTEQ()
- * @method static ComparatorEnum LT()
- * @method static ComparatorEnum LTEQ()
- * @method static ComparatorEnum IN()
- * @method static ComparatorEnum NIN()
- * @method static ComparatorEnum LIKE()
- * @method static ComparatorEnum NOT_LIKE()
- * @method static ComparatorEnum IS_NULL()
- * @method static ComparatorEnum NOT_NULL()
- */
-class ComparatorEnum extends Enum
+enum ComparatorEnum
 {
     /**
      * Equals comparator "=".
      * Checks if the field equals the value.
-     *
-     * @var string
      */
-    public const EQ = 'eq';
+    case EQ;
 
     /**
      * Not equals comparator "!=".
      * Checks if the field does not equal the value.
-     *
-     * @var string
      */
-    public const NEQ = 'neq';
+    case NEQ;
 
     /**
      * Greater than comparator ">".
      * Checks if the field is greater than the value.
-     *
-     * @var string
      */
-    public const GT = 'gt';
+    case GT;
 
     /**
      * Greater than or equals comparator ">=".
      * Checks if the field is greater than or equals the value.
-     *
-     * @var string
      */
-    public const GTEQ = 'gteq';
+    case GTEQ;
 
     /**
      * Less than comparator "<".
      * Checks if the field is less than the value.
-     *
-     * @var string
      */
-    public const LT = 'lt';
+    case LT;
 
     /**
      * Less than or equals comparator "<=".
      * Checks if the field is less than or equals the value.
-     *
-     * @var string
      */
-    public const LTEQ = 'lteq';
+    case LTEQ;
 
     /**
      * In comparator.
      * Checks if the field occurs in the value.
-     *
-     * @var string
      */
-    public const IN = 'in';
+    case IN;
 
     /**
      * Not in comparator.
      * Checks if the field does not occur in the value.
-     *
-     * @var string
      */
-    public const NIN = 'nin';
+    case NIN;
 
     /**
      * Like comparator.
      * Checks if the field looks like the value.
-     *
-     * @var string
      */
-    public const LIKE = 'like';
+    case LIKE;
 
     /**
      * Not like comparator.
      * Checks if the field does not look like the value.
-     *
-     * @var string
      */
-    public const NOT_LIKE = 'not_like';
+    case NOT_LIKE;
 
     /**
      * Is null comparator.
      * Checks if the field is null.
-     *
-     * @var string
      */
-    public const IS_NULL = 'is_null';
+    case IS_NULL;
 
     /**
      * Is not null comparator.
      * Checks if the field is not null.
-     *
-     * @var string
      */
-    public const NOT_NULL = 'not_null';
+    case NOT_NULL;
+
+    /**
+     * Retrieves the comparator name from the enum.
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return match($this) {
+            ComparatorEnum::EQ => 'eq',
+            ComparatorEnum::NEQ => 'neq',
+            ComparatorEnum::GT => 'gt',
+            ComparatorEnum::GTEQ => 'gteq',
+            ComparatorEnum::LT => 'lt',
+            ComparatorEnum::LTEQ => 'lteq',
+            ComparatorEnum::IN => 'in',
+            ComparatorEnum::NIN => 'nin',
+            ComparatorEnum::LIKE => 'like',
+            ComparatorEnum::NOT_LIKE => 'not_like',
+            ComparatorEnum::IS_NULL => 'is_null',
+            ComparatorEnum::NOT_NULL => 'not_null',
+        };
+    }
 }

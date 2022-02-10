@@ -35,7 +35,7 @@ class FilterGroupTest extends TestCase
         $filterMock = $this->createMock(FilterInterface::class);
         $subject->addFilter($filterMock);
         $subject->addFilterGroup($filterGroupMock);
-        $this->assertEquals(OperatorEnum::AND(), $subject->getOperator());
+        $this->assertEquals(OperatorEnum::AND, $subject->getOperator());
         $this->assertEquals(
             [$filterMock, $filterGroupMock],
             $subject->getFilters()

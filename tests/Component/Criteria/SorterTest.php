@@ -25,11 +25,11 @@ class SorterTest extends TestCase
      */
     public function testSorter(): void
     {
-        $subject = new Sorter('foo', DirectionEnum::ASC());
+        $subject = new Sorter('foo', DirectionEnum::ASC);
         $this->assertInstanceOf(Sorter::class, $subject);
         $this->assertEquals('foo', $subject->getField());
         $this->assertEquals(
-            DirectionEnum::ASC(),
+            DirectionEnum::ASC,
             $subject->getDirection()
         );
     }

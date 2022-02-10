@@ -7,8 +7,7 @@
   "prefer-stable": true,
   "minimum-stability": "stable",
   "require": {
-    "php": "^8.0",
-    "grizz-it/enum": "^1.1"
+    "php": "^8.1"
   },
   "authors": [
     {

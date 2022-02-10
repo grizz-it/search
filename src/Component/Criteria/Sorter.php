@@ -12,22 +12,16 @@ use GrizzIt\Search\Common\SorterInterface;
 
 class Sorter implements SorterInterface
 {
-    /** @var DirectionEnum */
-    private DirectionEnum $direction;
-
-    /** @var string */
-    private string $field;
-
     /**
      * Constructor
      *
      * @param string $field
-     * @param string $direction
+     * @param DirectionEnum $direction
      */
-    public function __construct(string $field, DirectionEnum $direction)
-    {
-        $this->field = $field;
-        $this->direction = $direction;
+    public function __construct(
+        private string $field,
+        private DirectionEnum $direction
+    ) {
     }
 
     /**

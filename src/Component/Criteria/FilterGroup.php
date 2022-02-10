@@ -26,7 +26,7 @@ class FilterGroup implements FilterGroupInterface
      */
     public function __construct(OperatorEnum $operator = null)
     {
-        $this->operator = $operator ?? OperatorEnum::AND();
+        $this->operator = $operator ?? OperatorEnum::AND;
     }
 
     /**

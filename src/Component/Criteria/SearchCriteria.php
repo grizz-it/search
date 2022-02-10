@@ -30,7 +30,7 @@ class SearchCriteria implements SearchCriteriaInterface
     /**
      * Adds a filter group to the criteria.
      *
-     * @param FilterGroupInterface $filter
+     * @param FilterGroupInterface $filterGroup
      *
      * @return void
      */
