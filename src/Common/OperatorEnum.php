@@ -7,22 +7,22 @@
 
 namespace GrizzIt\Search\Common;
 
-enum OperatorEnum
+enum OperatorEnum: string
 {
     /**
      * All checks should return true when joined with this operator.
      */
-    case AND;
+    case AND = 'and';
 
     /**
      * Any check should return true when joined with this operator.
      */
-    case OR;
+    case OR = 'or';
 
     /**
      * One of the checks should return true when joined with this operator.
      */
-    case XOR;
+    case XOR = 'xor';
 
     /**
      * Retrieves the operator name from the enum.
@@ -31,10 +31,26 @@ enum OperatorEnum
      */
     public function name(): string
     {
-        return match($this) {
+        return match ($this) {
             OperatorEnum::AND => 'and',
             OperatorEnum::OR => 'or',
             OperatorEnum::XOR => 'xor',
+        };
+    }
+
+    /**
+     * Creates the enum by the string variation.
+     *
+     * @param string $input
+     *
+     * @return OperatorEnum
+     */
+    public function byString(string $input): OperatorEnum
+    {
+        return match ($input) {
+            'and' => OperatorEnum::AND,
+            'or' => OperatorEnum::OR,
+            'xor' => OperatorEnum::XOR,
         };
     }
 }
